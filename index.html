@@ -1,0 +1,409 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+    </head>
+	<body >
+	 <!------------Pagina Principal------- -->
+		<div data-role="page" id="principal" data-title="Principal">
+			<div  data-role="panel" data-display="reveal" data-position="left" id="panel1">
+				<div data-role="header" class="ui-b" data-theme="b"> <h1 >Menú</h1>
+					<a class="ui-btn-left" href="#demo-links" data-rel="close" data-icon="delete" data-role="button" data-iconpos="notext"></a>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" style="margin:0px"> 
+						<li> <a onclick="noticias('1')" data-transition='flip' href="#todas"  > Informaci&oacuten General</a></li>
+						<li> <a onclick="noticias('2')" data-transition='flip' href="#todas"> Policiales</a></li>
+						<li> <a onclick="noticias('3')" data-transition='flip' href="#todas"  > Interior</a></li>
+						<li> <a onclick="noticias('4')" data-transition='flip' href="#todas"  > Nacionales</a></li>
+						<li> <a onclick="noticias('5')" data-transition='flip' href="#todas"  > Internacionales</a></li>
+						<li> <a onclick="noticias('6')" data-transition='flip' href="#todas"> Deportes</a></li>
+						<li> <a onclick="noticias('7')"  data-transition='flip' href="#todas"> Espet&aacuteculos </a></li>
+						<li> <a href="#contacto"  data-transition='flip' > Contacto</a></li>
+					</ul>
+						
+				</div>
+				
+			</div><!--fin panel-->
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<div class="col-xs-2">
+					<a href="#panel1" id="butonham" data-role="button"  data-theme="b"><span class="icon-menu"></span></a>
+				</div>
+				<div class="col-xs-10">
+					<img src="img/medios_provincia.png">
+				</div>
+					
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div id="cargando" class="cargando" ><img  src="img/load.gif" >
+				<p>Cargando...</p>
+				<p>Espere,por favor. </p>
+				
+				</div>
+				 
+				<div class="carusel">
+					<div id="myCarousel" class="carousel slide" data-ride="carousel">
+						<div class="carousel-inner" role="listbox">
+							
+						</div>
+						<a class="left carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="prev">
+							<span class="icon-left" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+						</a>
+						<a class="right carousel-control" href="https://getbootstrap.com/examples/carousel/#myCarousel" role="button" data-slide="next">
+							<span class=" icon-right" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+						</a>
+					</div><!-- /.carousel -->
+					<!--<a class="boton-mas" href="#tiempopopular" onclick="tiempopopular()" data-role="button" data-icon="plus" data-iconpos="left">
+					<p>Más Noticias en</p>
+						<img class="img-responsive" src="img/tiempo-popular.png">
+					</a>-->
+				</div>
+				<div class="opciones row">
+					<div class="col-xs-12"><p  class="titulo-seccion">Más noticias</p></div>
+					<div class="col-xs-12">
+						<a href="#tiempopopular" data-transition='flip'>
+							<img class="img-responsive" src="img/tiempo-popular.png">
+						</a>
+					</div>
+					<div class="col-xs-12"><p  class="titulo-seccion">Síguenos</p></div>
+					<div class="col-xs-6 ">	<div class="col-xs-12"><a href="https://www.facebook.com/c13mediosprovincia/?fref=ts"  data-transition="pop" onclick="cargarview()" ><img class="img-responsive" src="img/facebook.png"></a></div>	<div class="col-xs-12"><span>MediosProvincia</span></div></div>
+					<div class="col-xs-6 "><a href="https://twitter.com/mediosprovincia" target="_system" onclick="cargarview()"><div class="col-xs-12"><img class="img-responsive" src="img/twitter.png"></div><div class="col-xs-12"><span>@mediosProvincia</span></div></a></div>
+					
+					<div class="col-xs-12"><p class="titulo-seccion">Escúchanos </p></div>
+					<div class="col-xs-4"><a href="http://tunein.com/radio/Radio-Provincia-919-s158176/" target="_system" onclick="cargarview()"><img class="img-responsive" src="img/radio_provincia.png"></div></a>
+					<div class="col-xs-4"><a href="http://tun.in/sftBG" target="_system" onclick="cargarview()"><img class="img-responsive"src="img/radio_blue.png"></a></div>
+					<div class="col-xs-4"><a href="http://tun.in/sftwu" target="_system" onclick="cargarview()"><img class="img-responsive" src="img/radio_sur.png"></a></div>
+						
+					<div class="col-xs-12"><p  class="titulo-seccion">Míranos </p></div>
+					<div class="col-xs-4"><a href="http://www.ustream.tv/channel/medios-provincia" onclick="cargarview()" target="_system"><img class="img-responsive" src="img/canal13.png" style="  width: 100px; "></a></div>
+					<div class="col-xs-4"><a href="https://www.youtube.com/channel/UCHw7xtqHYqdsENbX_fJTfrA" onclick="cargarview()" target="_system"><img class="img-responsive" src="img/gente.png" style="  width: 100px; "></a></div>					
+					<div class="col-xs-4"><a href="https://www.youtube.com/channel/UCIkNEcci_cyXraDcw_XKsuA" onclick="cargarview()" target="_blank"><img class="img-responsive" src="img/noticiero13.png" style="  width: 100px; "></a></div>
+						
+					<div class="col-xs-12"><p  class="titulo-seccion">Contáctenos </p></div>
+					<div class="col-xs-4"><a onclick="whatsapp();" target="_system"><div class="col-xs-12"><img class="img-responsive" src="img/whatsapp.png"></div><div class="col-lg-12"><span>380-4499197</span></div></a></div>
+					<div class="col-xs-4"><a href="#contacto"  ><div class="col-xs-12"><img class="img-responsive" src="img/webmail.png"></div><div class="col-lg-12"><span>Envianos Aquí</span></div></a></div>
+					<div class="col-xs-4"><a href="tel:+543804490111"><div class="col-xs-12"><img class="img-responsive" src="img/telefono.png"></div><div class="col-lg-12"><span>380-4490111</span></div></a></div>
+								
+				</div>
+					
+			</div>
+			<div data-role="footer" >
+				
+			</div>
+				
+		</div>
+		<div data-role="page" id="tiempopopular"  data-title="">
+		<script> 
+			tiempopopular();
+			function tiempopopular() 
+{
+$("#primera").html("");
+$("#secundarias").html("");
+	archivoValidacion = "http://www.tiempopopular.com.ar/json/principal.php?jsoncallback=?"
+
+
+	$.getJSON( archivoValidacion, {id:1})
+
+	.done(function(data2) {
+	
+	/*$("#cargando").css("display","none");*/
+		$(data2).each(function (index, data2) {
+			$("#primera").append(
+		
+			"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+			"<H1 class='titulo_primera'>"+data2.titulo+"</h1>"+
+			"<div style='float: right;   position: absolute;'>"+
+				"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+				"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+				"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+			"<img class='img-responsive' src='http://tiempopopular.com.ar/2014/imagenes/"+data2.url+"_s.jpg'>"+
+			" </a> <hr>"
+			);
+		});
+		$("#cargando2").css("display","none");
+		
+	})
+	
+	.error( function(data2) { 
+	$("#cargando2").css("display","block");
+	$("#cargando2").append("<p>Compruebe su conexion a internet</p>"); } )
+
+	$.getJSON( archivoValidacion, {id:2})
+
+		.done(function(data2) {
+		
+		/*$("#cargando").css("display","none");*/
+			$(data2).each(function (index, data2) {
+				$("#secundarias").append(
+			
+				"<a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+			"<H1 class='titulo_primera'>"+data2.titulo+"</h1>"+
+			"<div style='float: right;   position: absolute;'>"+
+				"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+				"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+				"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+			"<img class='img-responsive' src='http://tiempopopular.com.ar/2014/imagenes/"+data2.url+"_s.jpg'>"+
+			" </a> <hr>"
+				);
+			});
+			$("#cargando").css("display","none");
+			
+		})
+			$.getJSON( archivoValidacion, {id:3})
+
+		.done(function(data2) {
+	
+		/*$("#cargando").css("display","none");*/
+			$(data2).each(function (index, data2) {
+		
+				$("#infogral").append(
+							
+							"<div class='row'><a href='#noticia1' data-transition='flip'  onclick='cargar("+data2.id_Noticia+");'>"+
+						
+				"<div class='col-xs-12 col-sm-12'><div class='box-img-secundarias'><img  class='img-responsive' src='http://tiempopopular.com.ar/2014/imagenes/"+data2.url+"_s.jpg'></div>"+
+				"<div class='box-titulo-secundarias'><H1 class='titulo_segundas'>"+data2.titulo+"</h1></div></div>"+
+				"<div class='redes'>"+
+					"<a  onclick='redsocial("+1+","+data2.id_Noticia+")'><span class='icon-whatsapp'></span></a>"+
+					"<a onclick='redsocial("+2+","+data2.id_Noticia+")'><span class='icon-facebook'></span></a>"+
+					"<a onclick='redsocial("+3+","+data2.id_Noticia+")'><span class='icon-twitter'></span></a></div>"+
+				"</a></div> <hr>"
+									
+									);
+			
+			
+			});
+			$("#cargando").css("display","none");
+		
+		})
+		
+	}	
+		</script>
+			<div  data-role="panel" data-display="reveal" data-position="left" id="panel2">
+				<div data-role="header" class="ui-b" data-theme="b"> <h1 >Menú</h1>
+					<a class="ui-btn-left" href="#demo-links" data-rel="close" data-icon="delete" data-role="button" data-iconpos="notext"></a>
+				</div>
+				<div data-role="content">
+					<ul data-role="listview" style="margin:0px"> 
+						<li> <a onclick="noticias('1')" data-transition='flip' href="#todas"  > Informaci&oacuten General</a></li>
+						<li> <a onclick="noticias('2')" data-transition='flip' href="#todas"> Policiales</a></li>
+						<li> <a onclick="noticias('3')" data-transition='flip' href="#todas"  > Interior</a></li>
+						<li> <a onclick="noticias('4')" data-transition='flip' href="#todas"  > Nacionales</a></li>
+						<li> <a onclick="noticias('5')" data-transition='flip' href="#todas"  > Internacionales</a></li>
+						<li> <a onclick="noticias('6')" data-transition='flip' href="#todas"> Deportes</a></li>
+						<li> <a onclick="noticias('7')"  data-transition='flip' href="#todas"> Espet&aacuteculos </a></li>
+						<li> <a href="#contacto"  data-transition='flip' > Contacto</a></li>
+					</ul>
+						
+				</div>
+				
+			</div><!--fin panel-->
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<div class="col-xs-2 col-sm-2">	
+					<a href="#panel2" id="butonham" data-role="button"  data-theme="b"><span class="icon-menu"></span></a>
+				</div>
+				<div class="col-xs-7 col-sm-7">
+					
+				</div>	
+				<div class="col-xs-3 col-sm-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div id="cargando2" class="cargando" ><img  src="img/load.gif" ><p>Cargando...</p></div>
+				<div class="col-lg-12 logo">
+					<img class="img-responsive"  src="img/tiempo-popular.png">
+					<p >
+						<a class="web" href="http://www.tiempopopular.com.ar" target="_system"  onclick="tiempopopular()"><span class="icon-web"></span> Ver Web </a>
+					</p>
+				</div>
+				<div class="row" id="primera"></div>	
+				<div class="row" id="secundarias"></div>
+				<div class="row" id="infogral">
+				<span class="title-categoria">Información General</span>
+				</div>
+					<p  class="titulo-mas">Más noticias</p>
+				<div class="row box-mas">
+			
+					<div class="col-xs-6"><a onclick="noticias('3')"  data-transition='flip' href="#todas">Interior</a></div>
+					<div class="col-xs-6"><a onclick="noticias('2')"  data-transition='flip' href="#todas">Policiales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('4')"  data-transition='flip' href="#todas">Nacionales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('5')"  data-transition='flip' href="#todas">Internacionales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('6')"  data-transition='flip' href="#todas">Deportes</a></div>
+					<div class="col-xs-6"><a onclick="noticias('7')"  data-transition='flip' href="#todas">Espet&aacuteculos </a></div>
+					
+			
+				
+				</div>
+			</div>
+			<div data-role="footer" >
+			www.tiempopopular.com.ar
+			</div>
+		</div>
+		
+		<!------------Pagina Noticia Indivudual--------->
+	<div data-role="page"   id="noticia1">
+	
+			
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+							
+				<div class="col-xs-9">
+					
+				</div>
+				<div class="col-xs-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>
+				
+					
+			</div>
+			<div data-role="content" class="ui-fondo" data-theme="fondo">
+				<div class="col-lg-12 logo">
+					<img class="img-responsive"  src="img/tiempo-popular.png">
+				</div>
+				<div id="noticia"></div>
+			</div>
+			<div data-role="footer" data-id="fijo"  >
+			<p> compartí esta noticia </p>
+				<div id="iconos">
+					
+				</div>
+			</div>
+	</div>
+	<!--- todas -->
+	<div data-role="page" id="todas">
+		
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">
+				<div class="col-xs-2 col-sm-2">	
+				
+				</div>
+				<div class="col-xs-7 col-sm-7">
+					<img src="img/medios_provincia.png">
+				
+				</div>	
+				<div class="col-xs-3 col-sm-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+			
+			<form class="ui-filterable">
+			<input id="filtronoticia" data-type="search"></form>
+			<ul data-role="listview" data-filter="true" data-input="#filtronoticia"		data-inset="true"	id="noticias">
+
+	
+			</div>
+			
+		
+			
+				
+		<div data-role="footer" >
+		<p  class="titulo-mas">Más noticias</p>
+				<div class="row box-mas">
+			
+					<div class="col-xs-6"><a onclick="noticias('3')"  data-transition='flip' href="#todas">Interior</a></div>
+					<div class="col-xs-6"><a onclick="noticias('2')"  data-transition='flip' href="#todas">Policiales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('4')"  data-transition='flip' href="#todas">Nacionales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('5')"  data-transition='flip' href="#todas">Internacionales</a></div>
+					<div class="col-xs-6"><a onclick="noticias('6')"  data-transition='flip' href="#todas">Deportes</a></div>
+					<div class="col-xs-6"><a onclick="noticias('7')"  data-transition='flip' href="#todas">Espet&aacuteculos </a></div>
+			
+					
+			
+				
+				</div>
+			www.tiempopopular.com.ar
+			</div>
+			
+	</div>
+	
+	<!------------Pagina Contacto--------->
+	<div data-role="page" id="contacto">
+			
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">		
+				<div class="col-xs-9"><p> Contactesé con nosotros </p>				</div>
+				<div class="col-xs-3">
+					<a href="#principal" data-role="button" data-rel="back" data-iconpos="notext"><span class="icon-back"></span></a>
+				</div>		
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+				<div class="col-lg-12">
+					<div id="alertaco" style="display:none;"	class="alert alert-success" role="alert"></div>
+					
+					<div class="form-group">
+						<input type="text"  class="form-control"  id="nombre" placeholder="Ingrese su Nombre">
+					</div>
+					<div class="form-group">
+						<textarea name="" id="mensaje" placeholder="Su mensaje" data-mini="false"></textarea>
+					</div>
+				   <div class="form-group">
+						<input id="btnDefaultSMS"  class="btn-contacto" onclick="enviarcorreo()" type="submit"   value="Enviar" >
+					</div>
+				</div>
+			</div>
+	</div>
+	</body>
+</html>
+
+  
+		<SCRIPT TYPE="text/javascript" src="js/phonegap-1.4.1.js"></SCRIPT>
+		<script type="text/javascript" src="PushNotification.js"></script>
+		<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="js/bootstrap.min.js"></SCRIPT>
+		<script type="text/javascript" src="cordova.js"></script>
+		<SCRIPT TYPE="text/javascript" src="js/main.js"></SCRIPT>
+		 <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript">
+		
+		if (localStorage.getItem('clave')){
+		init();
+	
+	}
+	else{
+		 
+         app.initialize();
+
+		 }
+        </script>
+		<script>
+			$(document).ready(function(){
+			alto=$( window ).height();
+			centro=alto/3;
+			centro2=centro;
+			$("#cargando").css("min-height",alto);
+			$("#cargando2").css("min-height",alto);
+			$("#myCarousel").carousel({interval: 5000, pause: "hover"});
+			})
+			
+			function whatsapp(){
+			
+			cordova.plugins.Whatsapp.send("+5493804499197");
+			}
+			
+			function cargarview(){
+			$("#cargando").html("");
+	
+			$("#cargando").css("display","block");
+			$("#cargando").append("<img  src='img/load.gif'>"); 
+			$("#cargando").append("<p>Cargando...</p>"); 
+			$("#cargando").css("height","980px");
+			$("#cargando").css("background","rgba(7, 7, 7, 0.57)");
+			$("#cargando").css("padding-top","400px");
+			$("#cargando").css("font-size","25px");
+			
+			$("#cargando").css("color","white");
+			
+			}
+			
+			
+		</script>
+		
+</html>

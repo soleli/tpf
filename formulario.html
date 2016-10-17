@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+
+<html>
+
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/jquery.mobile-1.4.5.css">
+		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
+		
+
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
+		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+    </head>
+	<body >
+		<div data-role="page" id="contacto">
+			
+			<div data-role="header"  data-id="fijo" data-position="fixed" class="ui-b" data-theme="b" style="  padding: 5px 0px 5px 0px;">		
+			
+				<div class="col-xs-7 col-sm-7">
+				
+					<img src="img/medios_provincia.png">
+				
+				</div>	
+			</div>
+			<div data-role="content" class="ui-fondo"  data-theme="fondo">
+				<div class="col-lg-12">
+					<p style="   font-size: 26px;    color: white;    text-align: center;    padding: 10px;"> Registrate y participa de nuestros sorteos</p>
+					
+					 <form id="formulario" name="formulario" method="post" action="http://www.tiempopopular.com.ar/json/registro.php"> 
+                <p><input type="text" id="name" name="name" placeholder="Nombre" required></p> 
+                <p><input type="text" id="email" name="email" placeholder="Telefono" required></p> 
+                <p><input type="hidden" name="regId" id="regId"  value="" placeholder="regId"></p> 
+                <button type="button" class="btn-contacto" onclick="registrar();">Registarte</button> 
+            </form>   
+				</div>
+			</div>
+	</div>
+	
+        
+	<SCRIPT TYPE="text/javascript" src="js/jquery-2.0.3.js"></SCRIPT>	
+        <script type="text/javascript"> 
+		  $( document ).ready(function() {
+			var paramstr = window.location.search.substr(1);
+			var paramarr = paramstr.split ("&");
+			var params = {};
+
+			for ( var i = 0; i < paramarr.length; i++) {
+				var tmparr = paramarr[i].split("=");
+				params[tmparr[0]] = tmparr[1];
+			}
+			if (params['id']) {
+		    document.getElementById('regId').value = params['id']; 
+			} 
+		})
+        function registrar(){ 
+            var nombre = document.getElementById('name').value; 
+            var email = document.getElementById('email').value; 
+            var regId = document.getElementById('regId').value; 
+            if (regId != "") { 
+                if (nombre != "" && email != "") { 
+                    //Enviamos los datos al servidor php 
+                    document.formulario.submit(); 
+					
+				
+                } 
+                else{alert('Ingrese un nombre y un correo para el registro en la base de datos.')} 
+            } 
+            else 
+                {alert('Esperando el regId del registro en GCM!');} 
+        } 
+        </script> 
+    </body> 
+</html>
