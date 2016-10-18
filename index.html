@@ -10,6 +10,7 @@
 		<link rel="stylesheet" type="text/css" href="jquery.mobile/icon-pack-custom.css">
 		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery-1.7.2.min"></SCRIPT>
 		<SCRIPT TYPE="text/javascript" src="jquery.mobile/jquery.mobile-1.4.5.js"></SCRIPT>
+		<script type="text/javascript" charset="utf-8" src="plugins/org.apache.cordova.inappbrowser/www/inappbrowser.js"></script>
     </head>
 	<body >
 	 <!------------Pagina Principal------- -->
@@ -80,9 +81,11 @@
 					<div class="col-xs-6 "><a href="https://twitter.com/mediosprovincia" target="_system" onclick="cargarview()"><div class="col-xs-12"><img class="img-responsive" src="img/twitter.png"></div><div class="col-xs-12"><span>@mediosProvincia</span></div></a></div>
 					
 					<div class="col-xs-12"><p class="titulo-seccion">Escúchanos </p></div>
-					<div class="col-xs-4"><a href="http://tunein.com/radio/Radio-Provincia-919-s158176/" target="_system" onclick="cargarview()"><img class="img-responsive" src="img/radio_provincia.png"></div></a>
+					<div class="col-xs-4"><a href="#" onClick="window.open('http://tunein.com/radio/Radio-Provincia-919-s158176/', '_system, 'location=yes');"><img class="img-responsive" src="img/radio_provincia.png"></div></a>
 					<div class="col-xs-4"><a href="http://tun.in/sftBG" target="_system" onclick="cargarview()"><img class="img-responsive"src="img/radio_blue.png"></a></div>
-					<div class="col-xs-4"><a href="http://tun.in/sftwu" target="_system" onclick="cargarview()"><img class="img-responsive" src="img/radio_sur.png"></a></div>
+					<div class="col-xs-4"><a href="http://tun.in/sftBG" target="_blank" onclick="cargarview()"><img class="img-responsive"src="img/radio_blue.png"></a></div>
+					<div class="col-xs-4"><a href="http://tun.in/sftBG" target="_self" onclick="cargarview()"><img class="img-responsive"src="img/radio_blue.png"></a></div>
+					<div class="col-xs-4"><a href="#" onClick="window.open('http://tun.in/sftwu', '_self, 'location=yes');"><img class="img-responsive" src="img/radio_sur.png"></a></div>
 						
 					<div class="col-xs-12"><p  class="titulo-seccion">Míranos </p></div>
 					<div class="col-xs-4"><a href="http://www.ustream.tv/channel/medios-provincia" onclick="cargarview()" target="_system"><img class="img-responsive" src="img/canal13.png" style="  width: 100px; "></a></div>
